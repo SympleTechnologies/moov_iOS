@@ -266,7 +266,7 @@ class LoginTableViewController: UITableViewController, UITextFieldDelegate, GIDS
         
         self.checkSocialLogin(provider: "google", uId: gAuthUid) { (success) in
             if success != true {
-                let selectUnivVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectPreferredInstitutionViewController")as! SelectPreferredInstitutionViewController
+                let selectUnivVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectPreferredInstitutionViewController") as! SelectPreferredInstitutionViewController
                 selectUnivVC.firstName = gFirstName
                 selectUnivVC.surName = gSUrName
                 selectUnivVC.emailID = gGmail
