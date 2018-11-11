@@ -112,6 +112,8 @@
 		2FFBC211210634B000A077D9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFBC214210634B000A077D9 /* FBSDKCoreKit.framework */; };
 		2FFBC212210634B000A077D9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFBC215210634B000A077D9 /* FBSDKLoginKit.framework */; };
 		37794D8F1624A79E15BDFEA4 /* Pods_Moov_Rider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3A43A1B53B6C877651E666 /* Pods_Moov_Rider.framework */; };
+		FDDC3CA121988F2100E91A44 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */; };
+		FDDC3CA32198BAE900E91A44 /* LoginAndSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -269,6 +271,8 @@
 		5869ADF509256E188040B675 /* Pods-Moov_Rider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov_Rider.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moov_Rider/Pods-Moov_Rider.release.xcconfig"; sourceTree = "<group>"; };
 		82BCE26623F89F9FBD4FA996 /* Pods-Moov_Rider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov_Rider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moov_Rider/Pods-Moov_Rider.debug.xcconfig"; sourceTree = "<group>"; };
 		CD3A43A1B53B6C877651E666 /* Pods_Moov_Rider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov_Rider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				2F23E29120FDCD1900487BA5 /* LoginTableViewController.swift */,
+				FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */,
+				FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -859,6 +865,7 @@
 				2F56F8CA2101DE40008F099F /* BMGooglePlaces.m in Sources */,
 				2FE11A2721520E50007F89F0 /* GFQuery.m in Sources */,
 				2F9F542A2100C7DD00310AE9 /* JHUD.h in Sources */,
+				FDDC3CA32198BAE900E91A44 /* LoginAndSignupViewController.swift in Sources */,
 				2FE11A3321524D56007F89F0 /* VehicleMarker.swift in Sources */,
 				2F1C555C210310EF00528D0A /* RechargeViewController.swift in Sources */,
 				2F9F542B2100C7DD00310AE9 /* JHUD.m in Sources */,
@@ -867,6 +874,7 @@
 				2F9F542E2100C7DD00310AE9 /* UIImage+JHUD.h in Sources */,
 				2FE11A2521520E50007F89F0 /* GFGeoHash.m in Sources */,
 				2F9F542F2100C7DD00310AE9 /* UIImage+JHUD.m in Sources */,
+				FDDC3CA121988F2100E91A44 /* WelcomeViewController.swift in Sources */,
 				2F210689212E88A900FA9265 /* FloatRatingView.swift in Sources */,
 				2FE11A2421520E50007F89F0 /* GFBase32Utils.m in Sources */,
 				2F9F54302100C7DD00310AE9 /* UIView+JHUD.h in Sources */,

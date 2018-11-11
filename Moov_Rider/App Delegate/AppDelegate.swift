@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         GIDSignIn.sharedInstance().clientID = "240444611110-84o3ivgt49kibaj7ovgda325h7n4ht3u.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
@@ -50,9 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         if (UserDefaults.standard.object(forKey: "CurrentUserDetails") != nil){
             let dict:NSDictionary = NSKeyedUnarchiver.unarchiveObject(with: (UserDefaults.standard.object(forKey: "CurrentUserDetails") as! NSData) as Data) as! NSDictionary
             User.current.initWithDictionary(dictionary: dict)
-            setRootToMain()
+//            setRootToMain()
         }else {
-            setRootToLogin()
+//            setRootToLogin()
         }
         
         UIApplication.shared.applicationIconBadgeNumber = 0
@@ -104,23 +104,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         }
     }
     
-    func setRootToMain(){
-        let homePage = self.storyboard.instantiateViewController(withIdentifier: "EnterDestinationViewController")
-            as! EnterDestinationViewController
-        let navVC = UINavigationController(rootViewController: homePage)
-        let sideVC = self.storyboard.instantiateViewController(withIdentifier: "SideMenuTableViewController") as! SideMenuTableViewController
-        let mfContainer = MFSideMenuContainerViewController.container(withCenter: navVC, leftMenuViewController: sideVC, rightMenuViewController: nil)
-        self.window?.rootViewController = mfContainer
-        self.window?.makeKeyAndVisible()
-    }
-    
-    func setRootToLogin(){
-        let LoginTableVC = self.storyboard.instantiateViewController(withIdentifier: "LoginTableViewController") as! LoginTableViewController
-        let navVC = UINavigationController(rootViewController: LoginTableVC)
-        self.window?.rootViewController = navVC
-        self.window?.makeKeyAndVisible()
-    }
-    
+//    func setRootToMain(){
+//        let homePage = self.storyboard.instantiateViewController(withIdentifier: "EnterDestinationViewController")
+//            as! EnterDestinationViewController
+//        let navVC = UINavigationController(rootViewController: homePage)
+//        let sideVC = self.storyboard.instantiateViewController(withIdentifier: "SideMenuTableViewController") as! SideMenuTableViewController
+//        let mfContainer = MFSideMenuContainerViewController.container(withCenter: navVC, leftMenuViewController: sideVC, rightMenuViewController: nil)
+//        self.window?.rootViewController = mfContainer
+//        self.window?.makeKeyAndVisible()
+//    }
+//
+//    func setRootToLogin(){
+//        let LoginTableVC = self.storyboard.instantiateViewController(withIdentifier: "LoginTableViewController") as! LoginTableViewController
+//        let navVC = UINavigationController(rootViewController: LoginTableVC)
+//        self.window?.rootViewController = navVC
+//        self.window?.makeKeyAndVisible()
+//    }
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         deviceTokenStr = tokenString
