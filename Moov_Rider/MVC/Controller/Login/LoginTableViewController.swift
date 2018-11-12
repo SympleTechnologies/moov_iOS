@@ -14,6 +14,7 @@ let kScreenWidth    = UIScreen.main.bounds.width
 let kScreenHeight   = UIScreen.main.bounds.height
 class LoginTableViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet var parentTableView: UITableView!
     @IBOutlet weak var viewUsernameTxtFld           : UIView!
     @IBOutlet weak var textFieldUsername            : UITextField!
     @IBOutlet weak var textFieldPassword            : UITextField!
@@ -31,6 +32,9 @@ class LoginTableViewController: UITableViewController, UITextFieldDelegate {
                                                selector: #selector(receiveToggleAuthUINotification(_:)),
                                                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                object: nil)
+
+        self.addGradient()
+
         self.addDoneButtonOnKeyboard()
         //viewUsernameTxtFld.setTopRoundedCorners()
        //viewPasswordTxtFld.setBottomRoundedCorners()
@@ -57,6 +61,22 @@ class LoginTableViewController: UITableViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHide))
         self.view.addGestureRecognizer(tapGesture)
         
+    }
+
+    func addGradient() {
+        let view = parentTableView!
+
+        let colorTop = UIColor(red: 192.0/255.0, green: 38.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        let colorBottom = UIColor(red: 35.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 1.0)
+
+        let gl = CAGradientLayer()
+        gl.colors = [colorTop, colorBottom]
+        gl.locations = [0.0, 1.0]
+
+        view.backgroundColor = UIColor.blue
+//        let backgroundLayer = gl
+//        backgroundLayer.frame = view.frame
+//        view.layer.insertSublayer(backgroundLayer, at: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {

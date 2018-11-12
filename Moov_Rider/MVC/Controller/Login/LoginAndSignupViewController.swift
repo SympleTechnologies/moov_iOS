@@ -8,17 +8,37 @@
 
 import UIKit
 
+enum LoginSignupTabBarDisplayedScreen: Int {
+    case signIn = 0
+    case signUp = 1
+}
+
 class LoginAndSignupViewController: UIViewController {
+
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+
+    var containerTabBarController: UITabBarController!
+    var screenToShow: LoginSignupTabBarDisplayedScreen?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBarController?.tabBar.isHidden = true
+        containerTabBarController.tabBar.isHidden = true
+
+        if let screen = screenToShow {
+            containerTabBarController.selectedIndex = screen.rawValue
+            segmentedControl.selectedSegmentIndex = screen.rawValue
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        containerTabBarController = segue.destination as? UITabBarController
+        containerTabBarController.view.translatesAutoresizingMaskIntoConstraints = false
     }
 
     @IBAction func segmentControlTapped(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
 
-        print ("amin aseda \(index)")
+        containerTabBarController.selectedIndex = index
     }
 }

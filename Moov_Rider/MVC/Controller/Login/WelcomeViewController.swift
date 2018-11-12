@@ -32,13 +32,19 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
     }
 
     @IBAction func signInButtonTapped(_ sender: UIButton) {
-        let signInVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginAndSignupViewController") as! LoginAndSignupViewController
-        self.navigationController?.pushViewController(signInVC, animated: true)
+        let loginAndSignUpVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginAndSignupViewController") as! LoginAndSignupViewController
+
+        loginAndSignUpVC.screenToShow = LoginSignupTabBarDisplayedScreen.signIn
+
+        self.navigationController?.pushViewController(loginAndSignUpVC, animated: true)
     }
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        let registrationVC = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationTableViewController") as! RegistrationTableViewController
-        self.navigationController?.pushViewController(registrationVC, animated: true)
+        let loginAndSignUpVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginAndSignupViewController") as! LoginAndSignupViewController
+
+        loginAndSignUpVC.screenToShow = LoginSignupTabBarDisplayedScreen.signUp
+
+        self.navigationController?.pushViewController(loginAndSignUpVC, animated: true)
     }
 
     //MARK: Check social Login
