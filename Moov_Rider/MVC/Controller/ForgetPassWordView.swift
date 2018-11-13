@@ -19,6 +19,7 @@ class ForgetPassWordView: UIView {
 
      var rDelegate : forgetPassWordDelegate!
     
+    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var buttonCancel: UIButton!
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var buttonDone: UIButton!
@@ -27,8 +28,10 @@ class ForgetPassWordView: UIView {
     override func layoutSubviews() {
         buttonDone.layer.cornerRadius = 9.0
         buttonCancel.layer.cornerRadius = 9.0
-        
+        title.center = self.center
+        self.addSubview(title)
     }
+
     @IBAction func btnSubmitTouched(_ sender : UIButton) {
         if textFieldEmail.text?.isEmpty == false{
             if GenericFunctions.isValidEmail(email: textFieldEmail.text!)

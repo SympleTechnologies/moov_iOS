@@ -13,7 +13,7 @@
 		2F1C555C210310EF00528D0A /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C555B210310EF00528D0A /* RechargeViewController.swift */; };
 		2F1C555D21032B2C00528D0A /* Paystack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1C555E21032B2C00528D0A /* Paystack.framework */; };
 		2F210689212E88A900FA9265 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F210688212E88A900FA9265 /* FloatRatingView.swift */; };
-		2F23E29220FDCD1900487BA5 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23E29120FDCD1900487BA5 /* LoginTableViewController.swift */; };
+		2F23E29220FDCD1900487BA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23E29120FDCD1900487BA5 /* LoginViewController.swift */; };
 		2F23E29520FDE54400487BA5 /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23E29420FDE54400487BA5 /* RegistrationTableViewController.swift */; };
 		2F23E29C20FE052200487BA5 /* SelectPreferredInstitutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23E29B20FE052200487BA5 /* SelectPreferredInstitutionViewController.swift */; };
 		2F23E2A520FE11DF00487BA5 /* NIDropDown.h in Sources */ = {isa = PBXBuildFile; fileRef = 2F23E2A120FE0AA800487BA5 /* NIDropDown.h */; };
@@ -114,6 +114,7 @@
 		37794D8F1624A79E15BDFEA4 /* Pods_Moov_Rider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3A43A1B53B6C877651E666 /* Pods_Moov_Rider.framework */; };
 		FDDC3CA121988F2100E91A44 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */; };
 		FDDC3CA32198BAE900E91A44 /* LoginAndSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */; };
+		FDF8A54F219A3EFB005FC5DB /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF8A54E219A3EFB005FC5DB /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,7 +138,7 @@
 		2F1C555E21032B2C00528D0A /* Paystack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Paystack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F210688212E88A900FA9265 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		2F23E29020FDCB2300487BA5 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		2F23E29120FDCD1900487BA5 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		2F23E29120FDCD1900487BA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F23E29420FDE54400487BA5 /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
 		2F23E29B20FE052200487BA5 /* SelectPreferredInstitutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPreferredInstitutionViewController.swift; sourceTree = "<group>"; };
 		2F23E29D20FE08AF00487BA5 /* Moov_Rider-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moov_Rider-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		CD3A43A1B53B6C877651E666 /* Pods_Moov_Rider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov_Rider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupViewController.swift; sourceTree = "<group>"; };
+		FDF8A54E219A3EFB005FC5DB /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,7 +348,7 @@
 		2F370F7A212C101F005E3AA3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2F23E29120FDCD1900487BA5 /* LoginTableViewController.swift */,
+				2F23E29120FDCD1900487BA5 /* LoginViewController.swift */,
 				FDDC3CA021988F2100E91A44 /* WelcomeViewController.swift */,
 				FDDC3CA22198BAE900E91A44 /* LoginAndSignupViewController.swift */,
 			);
@@ -458,6 +460,7 @@
 		2F74151120FDC58E00A0C94E /* Moov_Rider */ = {
 			isa = PBXGroup;
 			children = (
+				FDF8A54D219A3EE7005FC5DB /* Utilities */,
 				2F9DDB342102FFFA000AA30C /* Moov_Rider.entitlements */,
 				2F23E29620FE047900487BA5 /* External */,
 				2F23E28F20FDCB0900487BA5 /* Common Functions */,
@@ -668,6 +671,14 @@
 				5869ADF509256E188040B675 /* Pods-Moov_Rider.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDF8A54D219A3EE7005FC5DB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FDF8A54E219A3EFB005FC5DB /* UIHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -898,7 +909,7 @@
 				2F372232210091260002ADBF /* Generic.swift in Sources */,
 				2F23E2A620FE11DF00487BA5 /* NIDropDown.m in Sources */,
 				2F372252210094A80002ADBF /* AlamofireSubClass.swift in Sources */,
-				2F23E29220FDCD1900487BA5 /* LoginTableViewController.swift in Sources */,
+				2F23E29220FDCD1900487BA5 /* LoginViewController.swift in Sources */,
 				2F23E29C20FE052200487BA5 /* SelectPreferredInstitutionViewController.swift in Sources */,
 				2FCA608520FF361F00D9BA65 /* RateDriverViewController.swift in Sources */,
 				2F74151B20FDC58E00A0C94E /* Moov_Rider.xcdatamodeld in Sources */,
@@ -923,6 +934,7 @@
 				2FE5604A21463DCF00156896 /* WalletToWalletTableViewController.swift in Sources */,
 				2FD1573B20FE4996007CEEBC /* SideMenuTableViewController.swift in Sources */,
 				2F37225521009B5E0002ADBF /* College.swift in Sources */,
+				FDF8A54F219A3EFB005FC5DB /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -151,7 +151,7 @@ class EnterMobileNumberViewController: UIViewController, MICountryPickerDelegate
                 if response!["message"]as! String == "login success" {
                     //GenericFunctions.showAlertView(targetVC: self, title: "Success", message: "Succesfully updated your profile")
                     /*for controller in self.navigationController!.viewControllers as Array {
-                        if controller.isKind(of: LoginTableViewController.self) {
+                        if controller.isKind(of: LoginViewController.self) {
                             self.navigationController!.popToViewController(controller, animated: true)
                             break
                         }

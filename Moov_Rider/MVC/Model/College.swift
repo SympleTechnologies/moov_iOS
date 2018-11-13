@@ -114,7 +114,7 @@ public class UserDetails: NSObject {
         u_first_name = dictionary["u_first_name"] != nil ? dictionary["u_first_name"] as! String  : ""
         u_image = dictionary["u_image"] != nil ? dictionary["u_image"] as! String  : ""
         u_id = dictionary["u_id"] != nil ? dictionary["u_id"] as! Int  : 0
-        wallet_balance = WalletBalance().initWith(dictionary["wallet_balance"] as! NSDictionary)
+
         return self
     }
     

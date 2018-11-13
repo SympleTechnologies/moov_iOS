@@ -78,7 +78,7 @@ class ResetDetailsViewController: UIViewController, UIPopoverPresentationControl
         alert.addAction((UIAlertAction(title: "OK", style: .destructive, handler: {(action) -> Void in
             DispatchQueue.main.async {
                 User.logOutCurrentUser()
-                let LoginTableVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginTableViewController") as! LoginTableViewController
+                let LoginTableVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 let navVC = UINavigationController(rootViewController: LoginTableVC)
                 (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = navVC
                 

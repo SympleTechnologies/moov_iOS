@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RegistrationTableViewController: UITableViewController, UITextFieldDelegate {
+class RegistrationTableViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var viewFirsnameTxtFld                   : UIView!
     @IBOutlet weak var viewSurnameTxtFld                    : UIView!
@@ -32,119 +32,126 @@ class RegistrationTableViewController: UITableViewController, UITextFieldDelegat
         self.view.addGestureRecognizer(tapGesture)
         self.addDoneButtonOnKeyboard()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        UIHelper.addGradient(view: self.view)
+    }
+
     func setupUI()  {
-        viewFirsnameTxtFld.layer.borderColor = UIColor.lightGray.cgColor
-        viewFirsnameTxtFld.layer.borderWidth = 1.0
-        viewFirsnameTxtFld.layer.masksToBounds = true
-        viewSurnameTxtFld.layer.borderColor = UIColor.lightGray.cgColor
-        viewSurnameTxtFld.layer.borderWidth = 1.0
-        viewSurnameTxtFld.layer.masksToBounds = true
-        viewEmailTxtFld.layer.borderColor = UIColor.lightGray.cgColor
-        viewEmailTxtFld.layer.borderWidth = 1.0
-        viewEmailTxtFld.layer.masksToBounds = true
-        viewPasswordTxtFld.layer.borderColor = UIColor.lightGray.cgColor
-        viewPasswordTxtFld.layer.borderWidth = 1.0
-        viewPasswordTxtFld.layer.masksToBounds = true
-        viewConfirmPasswordTxtFld.layer.borderColor = UIColor.lightGray.cgColor
-        viewConfirmPasswordTxtFld.layer.borderWidth = 1.0
-        viewConfirmPasswordTxtFld.layer.masksToBounds = true
-        //viewFirsnameTxtFld.setTopRoundedCorners()
-        //viewConfirmPasswordTxtFld.setBottomRoundedCorners()
-        
-        textFieldFirstName.leftViewMode = .always
-        let imageView0 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
-        imageView0.image = #imageLiteral(resourceName: "user")
-        let paddingView0 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldFirstName.frame.height))
-        let paddingViewV0 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldFirstName.frame.height))
-        imageView0.center = paddingView0.center
-        paddingView0.addSubview(imageView0)
-        imageView0.contentMode = .scaleAspectFit
-        paddingViewV0.addSubview(paddingView0)
-        paddingViewV0.backgroundColor = UIColor.clear
-        textFieldFirstName.leftView = paddingViewV0
-        
-        
-        textFieldSurName.leftViewMode = .always
-        let imageView1 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
-        imageView1.image = #imageLiteral(resourceName: "user")
-        let paddingView1 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldSurName.frame.height))
-        let paddingViewV1 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldSurName.frame.height))
-        imageView1.center = paddingView1.center
-        paddingView1.addSubview(imageView1)
-        imageView1.contentMode = .scaleAspectFit
-        paddingViewV1.addSubview(paddingView1)
-        paddingViewV1.backgroundColor = UIColor.clear
-        textFieldSurName.leftView = paddingViewV1
-        
-        textFieldEmail.leftViewMode = .always
-        let imageView2 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
-        imageView2.image = #imageLiteral(resourceName: "mail")
-        let paddingView2 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldEmail.frame.height))
-        let paddingViewV2 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldEmail.frame.height))
-        imageView2.center = paddingView2.center
-        paddingView2.addSubview(imageView2)
-        imageView2.contentMode = .scaleAspectFit
-        paddingViewV2.addSubview(paddingView2)
-        paddingViewV2.backgroundColor = UIColor.clear
-        textFieldEmail.leftView = paddingViewV2
-        
-        textFieldPassword.leftViewMode = .always
-        let imageView3 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 35))
-        imageView3.image = #imageLiteral(resourceName: "pass-1")
-        let paddingView3 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldPassword.frame.height))
-        let paddingViewV3 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldPassword.frame.height))
-        imageView3.center = paddingView3.center
-        paddingView3.addSubview(imageView3)
-        imageView3.contentMode = .scaleAspectFit
-        paddingViewV3.addSubview(paddingView3)
-        paddingViewV3.backgroundColor = UIColor.clear
-        textFieldPassword.leftView = paddingViewV3
-        
-        textFieldConfirmPassword.leftViewMode = .always
-        let imageView4 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
-        imageView4.image = #imageLiteral(resourceName: "pass-1")
-        let paddingView4 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldConfirmPassword.frame.height))
-        let paddingViewV4 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldConfirmPassword.frame.height))
-        imageView4.center = paddingView4.center
-        paddingView4.addSubview(imageView4)
-        imageView4.contentMode = .scaleAspectFit
-        paddingViewV4.addSubview(paddingView4)
-        paddingViewV4.backgroundColor = UIColor.clear
-        textFieldConfirmPassword.leftView = paddingViewV4
-        
-        buttonSignin.layer.cornerRadius = 10.0
-        buttonSignin.layer.masksToBounds = true
-        
-        
-        let btnMenu = UIButton(type: .custom)
-        btnMenu.setImage(#imageLiteral(resourceName: "Back_Button_3x"), for: .normal)
-        btnMenu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        btnMenu.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
-        let item3 = UIBarButtonItem(customView: btnMenu)
-        self.navigationItem.setLeftBarButton(item3, animated: true)
-        self.navigationItem.title = "Moov"
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.red]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
-        //UITextfield top rounded border
-        
-        viewFirsnameTxtFld.clipsToBounds          = true
-        viewFirsnameTxtFld.layer.cornerRadius     = 15
-        if #available(iOS 11.0, *) {
-            viewFirsnameTxtFld.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        //UITextfield botton rounded border
-        
-        viewConfirmPasswordTxtFld.clipsToBounds      = true
-        viewConfirmPasswordTxtFld.layer.cornerRadius = 15
-        if #available(iOS 11.0, *) {
-            viewConfirmPasswordTxtFld.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        } else {
-            // Fallback on earlier versions
-        }
+//        viewFirsnameTxtFld.layer.borderColor = UIColor.lightGray.cgColor
+//        viewFirsnameTxtFld.layer.borderWidth = 1.0
+//        viewFirsnameTxtFld.layer.masksToBounds = true
+//        viewSurnameTxtFld.layer.borderColor = UIColor.lightGray.cgColor
+//        viewSurnameTxtFld.layer.borderWidth = 1.0
+//        viewSurnameTxtFld.layer.masksToBounds = true
+//        viewEmailTxtFld.layer.borderColor = UIColor.lightGray.cgColor
+//        viewEmailTxtFld.layer.borderWidth = 1.0
+//        viewEmailTxtFld.layer.masksToBounds = true
+//        viewPasswordTxtFld.layer.borderColor = UIColor.lightGray.cgColor
+//        viewPasswordTxtFld.layer.borderWidth = 1.0
+//        viewPasswordTxtFld.layer.masksToBounds = true
+//        viewConfirmPasswordTxtFld.layer.borderColor = UIColor.lightGray.cgColor
+//        viewConfirmPasswordTxtFld.layer.borderWidth = 1.0
+//        viewConfirmPasswordTxtFld.layer.masksToBounds = true
+//        //viewFirsnameTxtFld.setTopRoundedCorners()
+//        //viewConfirmPasswordTxtFld.setBottomRoundedCorners()
+//        
+//        textFieldFirstName.leftViewMode = .always
+//        let imageView0 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
+//        imageView0.image = #imageLiteral(resourceName: "user")
+//        let paddingView0 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldFirstName.frame.height))
+//        let paddingViewV0 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldFirstName.frame.height))
+//        imageView0.center = paddingView0.center
+//        paddingView0.addSubview(imageView0)
+//        imageView0.contentMode = .scaleAspectFit
+//        paddingViewV0.addSubview(paddingView0)
+//        paddingViewV0.backgroundColor = UIColor.clear
+//        textFieldFirstName.leftView = paddingViewV0
+//        
+//        
+//        textFieldSurName.leftViewMode = .always
+//        let imageView1 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
+//        imageView1.image = #imageLiteral(resourceName: "user")
+//        let paddingView1 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldSurName.frame.height))
+//        let paddingViewV1 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldSurName.frame.height))
+//        imageView1.center = paddingView1.center
+//        paddingView1.addSubview(imageView1)
+//        imageView1.contentMode = .scaleAspectFit
+//        paddingViewV1.addSubview(paddingView1)
+//        paddingViewV1.backgroundColor = UIColor.clear
+//        textFieldSurName.leftView = paddingViewV1
+//        
+//        textFieldEmail.leftViewMode = .always
+//        let imageView2 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
+//        imageView2.image = #imageLiteral(resourceName: "mail")
+//        let paddingView2 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldEmail.frame.height))
+//        let paddingViewV2 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldEmail.frame.height))
+//        imageView2.center = paddingView2.center
+//        paddingView2.addSubview(imageView2)
+//        imageView2.contentMode = .scaleAspectFit
+//        paddingViewV2.addSubview(paddingView2)
+//        paddingViewV2.backgroundColor = UIColor.clear
+//        textFieldEmail.leftView = paddingViewV2
+//        
+//        textFieldPassword.leftViewMode = .always
+//        let imageView3 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 35))
+//        imageView3.image = #imageLiteral(resourceName: "pass-1")
+//        let paddingView3 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldPassword.frame.height))
+//        let paddingViewV3 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldPassword.frame.height))
+//        imageView3.center = paddingView3.center
+//        paddingView3.addSubview(imageView3)
+//        imageView3.contentMode = .scaleAspectFit
+//        paddingViewV3.addSubview(paddingView3)
+//        paddingViewV3.backgroundColor = UIColor.clear
+//        textFieldPassword.leftView = paddingViewV3
+//        
+//        textFieldConfirmPassword.leftViewMode = .always
+//        let imageView4 = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
+//        imageView4.image = #imageLiteral(resourceName: "pass-1")
+//        let paddingView4 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldConfirmPassword.frame.height))
+//        let paddingViewV4 = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: textFieldConfirmPassword.frame.height))
+//        imageView4.center = paddingView4.center
+//        paddingView4.addSubview(imageView4)
+//        imageView4.contentMode = .scaleAspectFit
+//        paddingViewV4.addSubview(paddingView4)
+//        paddingViewV4.backgroundColor = UIColor.clear
+//        textFieldConfirmPassword.leftView = paddingViewV4
+//        
+//        buttonSignin.layer.cornerRadius = 10.0
+//        buttonSignin.layer.masksToBounds = true
+//        
+//        
+//        let btnMenu = UIButton(type: .custom)
+//        btnMenu.setImage(#imageLiteral(resourceName: "Back_Button_3x"), for: .normal)
+//        btnMenu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+//        btnMenu.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+//        let item3 = UIBarButtonItem(customView: btnMenu)
+//        self.navigationItem.setLeftBarButton(item3, animated: true)
+//        self.navigationItem.title = "Moov"
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.red]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        
+//        //UITextfield top rounded border
+//        
+//        viewFirsnameTxtFld.clipsToBounds          = true
+//        viewFirsnameTxtFld.layer.cornerRadius     = 15
+//        if #available(iOS 11.0, *) {
+//            viewFirsnameTxtFld.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        
+//        //UITextfield botton rounded border
+//        
+//        viewConfirmPasswordTxtFld.clipsToBounds      = true
+//        viewConfirmPasswordTxtFld.layer.cornerRadius = 15
+//        if #available(iOS 11.0, *) {
+//            viewConfirmPasswordTxtFld.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+//        } else {
+//            // Fallback on earlier versions
+//        }
     }
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar  = UIToolbar(frame: CGRect(x:0, y:0, width:320, height:50))
@@ -173,7 +180,8 @@ class RegistrationTableViewController: UITableViewController, UITextFieldDelegat
     }
     //MARK:- Button Actions
     @IBAction func buttonSigninAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        (self.parent?.parent as! LoginAndSignupViewController).segmentedControl.selectedSegmentIndex = LoginSignupTabBarDisplayedScreen.signIn.rawValue
+        self.tabBarController?.selectedIndex = LoginSignupTabBarDisplayedScreen.signIn.rawValue
     }
     @IBAction func buttonNextActions(_ sender: UIButton) {
         if textFieldFirstName.text?.isEmpty == false {
