@@ -21,8 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var deviceToken                                 : String!
     var appDelegate                                 : AppDelegate!
     var activeTextfiled                             : UITextField!
-
-    var gradientLayer: CAGradientLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +35,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         buttonSignin.layer.masksToBounds = true
         paddingTextFields()
 
+        UIHelper.addGradient(view: self.view)
+
         let btnMenu = UIButton(type: .custom)
         btnMenu.setImage(#imageLiteral(resourceName: "Back_Button_3x"), for: .normal)
         btnMenu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
@@ -49,16 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHide))
         self.view.addGestureRecognizer(tapGesture)
-//
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        UIHelper.addGradient(view: self.view)
-    }
-
-
 
     func paddingTextFields()  {
 //        textFieldUsername.leftViewMode = .always
@@ -204,17 +195,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     func addDoneButtonOnKeyboard() {
-//        let doneToolbar: UIToolbar  = UIToolbar(frame: CGRect(x:0, y:0, width:320, height:50))
-//        doneToolbar.barStyle        = UIBarStyle.default
-//        let flexSpace               = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-//        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonAction))
-//        var items           = [UIBarButtonItem]()
-//        items.append(flexSpace)
-//        items.append(done)
-//        doneToolbar.items   = items
-//        doneToolbar.sizeToFit()
-//        textFieldUsername.inputAccessoryView = doneToolbar
-//        textFieldPassword.inputAccessoryView = doneToolbar
+        let doneToolbar: UIToolbar  = UIToolbar(frame: CGRect(x:0, y:0, width:320, height:50))
+        doneToolbar.barStyle        = UIBarStyle.default
+        let flexSpace               = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonAction))
+        var items           = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        doneToolbar.items   = items
+        doneToolbar.sizeToFit()
+        textFieldUsername.inputAccessoryView = doneToolbar
+        textFieldPassword.inputAccessoryView = doneToolbar
        
     }
     @objc func doneButtonAction() {

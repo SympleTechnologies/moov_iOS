@@ -46,12 +46,12 @@
         self.layer.shadowRadius = 5;
         self.layer.shadowOpacity = 0.5;
         
-        table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, btn.size.width, 0)];
+        table = [[UITableView alloc] initWithFrame:CGRectMake(btn.size.width/6, -btn.size.height/2, btn.size.width/1.5, 0)];
         table.delegate = self;
         table.dataSource = self;
         table.layer.cornerRadius = 5;
         table.backgroundColor = [UIColor colorWithRed:0.239 green:0.239 blue:0.239 alpha:1];
-        table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.separatorColor = [UIColor grayColor];
         
         [UIView beginAnimations:nil context:nil];
@@ -61,7 +61,7 @@
         } else if([direction isEqualToString:@"down"]) {
             self.frame = CGRectMake(btn.origin.x, btn.origin.y+btn.size.height, btn.size.width, height);
         }
-        table.frame = CGRectMake(0, 0, btn.size.width, height);
+        table.frame = CGRectMake(btn.size.width/6, -btn.size.height/2, btn.size.width/1.5, height);
         [UIView commitAnimations];
         [b.superview addSubview:self];
         [self addSubview:table];
@@ -79,7 +79,7 @@
     }else if ([animationDirection isEqualToString:@"down"]) {
         self.frame = CGRectMake(btn.origin.x, btn.origin.y+btn.size.height, btn.size.width, 0);
     }
-    table.frame = CGRectMake(0, 0, btn.size.width, 0);
+    table.frame = CGRectMake(btn.size.width/6, -btn.size.height/2, btn.size.width/1.5, 0);
     [UIView commitAnimations];
 }
 

@@ -52,6 +52,8 @@ class SelectPreferredInstitutionViewController: UIViewController, NIDropDownDele
     }
     
     func setupUI()  {
+        UIHelper.addGradient(view: self.view)
+
         selectUniversity = false
         textFieldUniv.leftViewMode = .always
         let imageView = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
@@ -101,7 +103,7 @@ class SelectPreferredInstitutionViewController: UIViewController, NIDropDownDele
         
         
     }
-    
+
     //MARK: Api List Colleges
     func listColleges() {
         let hud = GenericFunctions.showJHud(target: self)
@@ -213,10 +215,10 @@ class SelectPreferredInstitutionViewController: UIViewController, NIDropDownDele
                 enterPhoneNumberVC.imageUrl = self.imageUrl!
                 self.navigationController?.pushViewController(enterPhoneNumberVC, animated: true)
                 
-            }else{
+            } else{
                 GenericFunctions.showAlertView(targetVC: self, title: "Message", message: "Please select role")
             }
-        }else{
+        } else{
             GenericFunctions.showAlertView(targetVC: self, title: "Message", message: "Please select university")
         }
         
